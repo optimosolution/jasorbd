@@ -1,6 +1,6 @@
 <?php
 
-class ContentController extends Controller {
+class YoutubeController extends Controller {
 
     /**
      * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -26,7 +26,7 @@ class ContentController extends Controller {
     public function accessRules() {
         return array(
             array('allow', // allow all users to perform 'index' and 'view' actions
-                'actions' => array('index', 'view', 'category'),
+                'actions' => array('index', 'view'),
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -48,7 +48,6 @@ class ContentController extends Controller {
      * @param integer $id the ID of the model to be displayed
      */
     public function actionView($id) {
-        Yii::app()->db->createCommand('UPDATE {{content}} SET hits = hits+1 WHERE id=' . $id)->execute();
         $this->render('view', array(
             'model' => $this->loadModel($id),
         ));
@@ -59,13 +58,13 @@ class ContentController extends Controller {
      * If creation is successful, the browser will be redirected to the 'view' page.
      */
     public function actionCreate() {
-        $model = new Content;
+        $model = new Youtube;
 
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model);
 
-        if (isset($_POST['Content'])) {
-            $model->attributes = $_POST['Content'];
+        if (isset($_POST['Youtube'])) {
+            $model->attributes = $_POST['Youtube'];
             if ($model->save())
                 $this->redirect(array('view', 'id' => $model->id));
         }
@@ -86,8 +85,8 @@ class ContentController extends Controller {
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model);
 
-        if (isset($_POST['Content'])) {
-            $model->attributes = $_POST['Content'];
+        if (isset($_POST['Youtube'])) {
+            $model->attributes = $_POST['Youtube'];
             if ($model->save())
                 $this->redirect(array('view', 'id' => $model->id));
         }
@@ -114,24 +113,8 @@ class ContentController extends Controller {
      * Lists all models.
      */
     public function actionIndex() {
-        $dataProvider = new CActiveDataProvider('Content');
+        $dataProvider = new CActiveDataProvider('Youtube');
         $this->render('index', array(
-            'dataProvider' => $dataProvider,
-        ));
-    }
-
-    public function actionCategory($id) {
-        $criteria = new CDbCriteria;
-        $criteria->addCondition('state=1 AND catid=' . (int) $id);
-        $criteria->order = 'created DESC, id DESC';
-        $dataProvider = new CActiveDataProvider('Content', array(
-            'criteria' => $criteria,
-            'pagination' => array(
-                'pageSize' => 5,
-            ),
-        ));
-
-        $this->render('category', array(
             'dataProvider' => $dataProvider,
         ));
     }
@@ -140,10 +123,10 @@ class ContentController extends Controller {
      * Manages all models.
      */
     public function actionAdmin() {
-        $model = new Content('search');
+        $model = new Youtube('search');
         $model->unsetAttributes();  // clear any default values
-        if (isset($_GET['Content']))
-            $model->attributes = $_GET['Content'];
+        if (isset($_GET['Youtube']))
+            $model->attributes = $_GET['Youtube'];
 
         $this->render('admin', array(
             'model' => $model,
@@ -154,11 +137,11 @@ class ContentController extends Controller {
      * Returns the data model based on the primary key given in the GET variable.
      * If the data model is not found, an HTTP exception will be raised.
      * @param integer $id the ID of the model to be loaded
-     * @return Content the loaded model
+     * @return Youtube the loaded model
      * @throws CHttpException
      */
     public function loadModel($id) {
-        $model = Content::model()->findByPk($id);
+        $model = Youtube::model()->findByPk($id);
         if ($model === null)
             throw new CHttpException(404, 'The requested page does not exist.');
         return $model;
@@ -166,10 +149,10 @@ class ContentController extends Controller {
 
     /**
      * Performs the AJAX validation.
-     * @param Content $model the model to be validated
+     * @param Youtube $model the model to be validated
      */
     protected function performAjaxValidation($model) {
-        if (isset($_POST['ajax']) && $_POST['ajax'] === 'content-form') {
+        if (isset($_POST['ajax']) && $_POST['ajax'] === 'youtube-form') {
             echo CActiveForm::validate($model);
             Yii::app()->end();
         }

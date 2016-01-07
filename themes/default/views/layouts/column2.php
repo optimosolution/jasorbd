@@ -2,7 +2,7 @@
 <!-- PAGE HEADER -->
 <section class="page-header dark page-header-xs">
     <div class="container">
-        <h1>ARTICLES</h1>
+        <h1><?php echo Title::get_title(11); ?></h1>
         <?php if (isset($this->breadcrumbs)): ?>
             <?php
             $this->widget('zii.widgets.CBreadcrumbs', array(
@@ -35,7 +35,7 @@
             <div class="side-nav margin-bottom-60 margin-top-30">
                 <div class="side-nav-head">
                     <button class="fa fa-bars"></button>
-                    <h4>CATEGORIES</h4>
+                    <h4><?php echo Title::get_title(9); ?></h4>
                 </div>
                 <?php ContentCategory::get_category_list(2); ?>
                 <!-- /side navigation -->
@@ -44,13 +44,13 @@
             <div class="side-nav margin-bottom-60 margin-top-30">
                 <div class="side-nav-head">
                     <button class="fa fa-bars"></button>
-                    <h4>RECENT ARTICLE</h4>
+                    <h4><?php echo Title::get_title(2); ?></h4>
                 </div>
                 <?php Content::get_recent_content(); ?>
                 <!-- /side navigation -->
             </div>
             <!-- FEATURED VIDEO -->
-            <h3 class="hidden-xs size-16 margin-bottom-10">FEATURED VIDEO</h3>
+            <h3 class="hidden-xs size-16 margin-bottom-10"><?php echo Title::get_title(10); ?></h3>
             <div class="hidden-xs embed-responsive embed-responsive-16by9 margin-bottom-60">
                 <iframe class="embed-responsive-item" width="265" height="215" src="//www.youtube.com/embed/<?php echo $this->get_youtube_video(); ?>" frameborder="0" allowfullscreen></iframe>
             </div>           
@@ -58,7 +58,7 @@
             <?php
             $this->widget('application.extensions.fbLikeBox.fbLikeBox', array(
                 'likebox' => array(
-                    'url' => 'https://www.facebook.com/mujibsenanews',
+                    'url' => 'https://www.facebook.com/jasorbd',
                     'header' => 'true',
                     'width' => '263',
                     'height' => '258',

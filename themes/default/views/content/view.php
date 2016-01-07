@@ -22,5 +22,12 @@ $this->breadcrumbs = array(
 <figure class="margin-bottom-20">
     <?php echo Content::get_picture_responsive($model->id); ?>
 </figure>
+<?php
+$this->widget('application.extensions.SocialShareButton.SocialShareButton', array(
+    'style' => 'horizontal',
+    'networks' => array('facebook', 'googleplus', 'linkedin', 'twitter'),
+    'data_via' => '', //twitter username (for twitter only, if exists else leave empty)
+));
+?>
 <p><?php echo $model->introtext; ?></p>
 <div class="divider divider-dotted"><!-- divider --></div>

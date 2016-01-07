@@ -80,13 +80,15 @@
                                         </a>
                                         <?php echo ContentCategory::get_category_list_menu(13); ?>    
                                     </li>
+                                    <li><?php echo CHtml::link(Content::get_title(1), array('content/view', 'id' => 1)); ?></li>
                                     <li class="dropdown"><!-- PAGES -->
                                         <a class="dropdown-toggle" href="#">
                                             <?php echo ContentCategory::getCategoryName(2); ?>
                                         </a>
                                         <?php echo ContentCategory::get_category_list_menu(2); ?>
                                     </li>
-                                    <li><?php echo CHtml::link(Content::get_title(1), array('content/view', 'id' => 1)); ?></li>
+                                    <li><?php echo CHtml::link(Title::get_title(6), array('youtube/index')); ?></li>
+                                    <li><?php echo CHtml::link(Title::get_title(14), array('content/view', 'id' => 26)); ?></li>
                                 </ul>
                             </nav>
                         </div>
@@ -123,14 +125,14 @@
                         </div>
                         <div class="col-md-5">
                             <!-- Latest Blog Post -->
-                            <h4 class="letter-spacing-1">LATEST ARTICLE</h4>
+                            <h4 class="letter-spacing-1"><?php echo Title::get_title(2); ?></h4>
                             <?php Content::get_latest_content(); ?>
                             <!-- /Latest Blog Post -->
                         </div>
                         <div class="col-md-4">
                             <!-- Newsletter Form -->
-                            <h4 class="letter-spacing-1">KEEP IN TOUCH</h4>
-                            <p>Subscribe to Our Newsletter to get Important News &amp; Offers</p>
+                            <h4 class="letter-spacing-1"><?php echo Title::get_title(12); ?></h4>
+                            <p>Subscribe to Our Newsletter to get Important Articles.</p>
 
                             <form class="validate" action="http://theme.stepofweb.com/Smarty/v1.1.2/HTML/php/newsletter.php" method="post" data-success="Subscribed! Thank you!" data-toastr-position="bottom-right">
                                 <div class="input-group">
@@ -194,7 +196,7 @@
         <!-- JAVASCRIPT FILES -->
         <script type="text/javascript">var plugin_path = '<?php echo Yii::app()->theme->baseUrl; ?>/assets/plugins/index.html';</script>
         <script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/assets/plugins/jquery/jquery-2.1.4.min.js"></script>
-        <script type="text/javascript" src="<?php //echo Yii::app()->theme->baseUrl;        ?>/assets/js/scripts.js"></script>
+        <script type="text/javascript" src="<?php //echo Yii::app()->theme->baseUrl;          ?>/assets/js/scripts.js"></script>
         <!-- SWIPE SLIDER -->
         <script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/assets/plugins/slider.swiper/dist/js/swiper.min.js"></script>
         <script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/assets/js/view/demo.swiper_slider.js"></script>

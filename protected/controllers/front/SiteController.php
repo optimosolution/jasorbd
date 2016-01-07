@@ -53,9 +53,9 @@ class SiteController extends Controller {
      */
     public function actionIndex() {
         $this->pageTitle = Yii::app()->name;
-        Yii::app()->clientScript->registerMetaTag(Yii::app()->name . ' - Site description.', 'description');
-        Yii::app()->clientScript->registerMetaTag("keywords,here", 'keywords');
-        
+        Yii::app()->clientScript->registerMetaTag(Yii::app()->name, 'description');
+        Yii::app()->clientScript->registerMetaTag("Banglanews, Banglanews24, Dhaka, Bangladesh, News, Breaking News, Breakingnews, newspaper, online news portal, Bangladesh News, World News, Asia News, Bengali Newspaper, Bangla News Online, Bangladeshi Newspaper, News paper Bangladesh, Daily news paper in bangladesh, daily newspapers of bangladesh, daily newspaper, Current News, Bengali daily newspaper, Internet Newspaper, National, International, Politics, Business, Sports, Entertainment, Technology, Education, Health, Lifestyle, Feature, Literature, share market, Ichchheghuri, Technology, Malaysia, New York, aviatour, Chittagong, Islam, open forum, Traveling, Travelers notebook, Citizen opinion, Awami League, BNP, Jatiya Party, Politics, Parliament, Sangsad, Sheikh Hasina, Khaleda Zia, Ershad, Sunny Leone, Facebook, twitter, Google, Angelina Jolie, Shakira, song, dance, Company, Economy, Industry, Markets, Education, Entertainment, Arts, Books, Celebrities, Movies, Music, TV, Headlines, Health, Humor, Legal, Lifestyle, Automotive, Culture, Food and Beverage, Home, Garden, Theater, Travel, Nation, Politics, Religion, Science, Environment, Geography, Space, Sports, America, Football, Athletics, Badminton, Baseball, Basketball, Cricket, Cycling, Hockey, Golf, Handball, School, Olympics, Racing, Tennis, Computer, Internet, Video Games, Weird News, World, bdnews24, Daily Star, Prothom Alo, BDNEWS, stock market, Foreign Education, Yunus, Tarique, War Crimes Tribunal, 1971, English Version, Bangla Version, Hello, Opinion, Lifestyle, Kidz, Cricket, Blog, Kids, Human Rights, Business Study, Movies, Films, Cinema, Technology News, Obama, Mobile Court, Dhaka Metropolitan Police, Facebook, Blockade, Countrywide Strike, Handmade Bombs, RAB, Shibir Activists, Jamaat-e-Islami, BNP, AL, Dialogue, BBC News, Environment, Breaking News, Top news", 'keywords');
+
         //Recent Articles
         $criteria = new CDbCriteria;
         $criteria->addCondition('state=1 AND catid!=1');
@@ -63,10 +63,10 @@ class SiteController extends Controller {
         $dataProvider = new CActiveDataProvider('Content', array(
             'criteria' => $criteria,
             'pagination' => array(
-                'pageSize' => 10,
+                'pageSize' => 5,
             ),
         ));
-        
+
         $this->render('index', array(
             'dataProvider' => $dataProvider,
         ));

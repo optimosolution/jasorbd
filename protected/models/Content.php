@@ -251,7 +251,7 @@ class Content extends CActiveRecord {
                     'order' => 'created DESC, id DESC',
                     'limit' => '10',
         ));
-        echo '<ul>';
+        echo '<ul style="padding-left:0px;">';
         foreach ($array as $key => $value) {
             echo '<div class="row tab-post">';
             echo '<div class="col-md-3 col-sm-3 col-xs-3">';
@@ -275,7 +275,7 @@ class Content extends CActiveRecord {
                     'limit' => '10',
                     'order' => 'hits DESC',
         ));
-        echo '<ul>';
+        echo '<ul style="padding-left:0px;">';
         foreach ($array as $key => $value) {
             echo '<div class="row tab-post">';
             echo '<div class="col-md-3 col-sm-3 col-xs-3">';
@@ -290,6 +290,22 @@ class Content extends CActiveRecord {
             echo '</div>';
         }
         echo '</ul>';
+    }
+
+    public static function getPara($content, $dot) {
+        //find first dot position
+        $position = stripos($content, $dot);
+        //if there a dot in our soruce text do
+        if ($position) {
+            //prepare offset
+            $offset = $position + 1;
+            //find second dot using offset
+            $position2 = stripos($content, $dot, $offset);
+            //put two first sentences under $first_two
+            $first_two = substr($content, 0, $position2);
+            //add some dots
+            return $first_two . '...';
+        }
     }
 
 }

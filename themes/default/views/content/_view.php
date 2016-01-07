@@ -21,7 +21,10 @@
             <?php echo CHtml::link('<span class="font-lato">' . ContentCategory::getCategoryName($data->catid) . '</span>', array('content/category', 'id' => $data->catid), array('class' => 'category')); ?>            
         </li>
     </ul>
-    <p><?php echo $data->introtext; ?></p>
+    <p style="font-size:16px;">
+        <?php echo $this->text_cut($this->html2txt($data->introtext), 1000); ?>
+            <?php //echo Content::getPara($data->introtext, '</p>'); ?>
+    </p>
     <?php echo CHtml::link('<i class="fa fa-plus"></i> <span>Read More</span>', array('content/view', 'id' => $data->id), array('class' => 'btn btn-reveal btn-default')); ?>
 </div>
 <!-- /POST ITEM -->
