@@ -68,9 +68,12 @@
                         <button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
                             <i class="fa fa-bars"></i>
                         </button>
-
                         <!-- Logo -->
-                        <?php echo CHtml::link('<span style="font-size:24px;">' . CHtml::encode(Yii::app()->name) . '</span>', array('site/index'), array('class' => 'logo pull-left')); ?>
+                        <?php //echo CHtml::link('<span style="font-size:24px;">' . CHtml::encode(Yii::app()->name) . '</span>', array('site/index'), array('class' => 'logo pull-left')); ?>
+						<?php
+                        $logo = CHtml::image(Yii::app()->theme->baseUrl . '/assets/images/logo.png', 'Logo', array('alt' => Yii::app()->name, 'class' => '', 'title' => Yii::app()->name, 'style' => 'height:60px;'));
+                        echo CHtml::link($logo, array('site/index'), array('class' => 'logo'));
+                        ?>
                         <div class="navbar-collapse pull-right nav-main-collapse collapse submenu-dark">
                             <nav class="nav-main">
                                 <ul id="topMain" class="nav nav-pills nav-main" style="font-size:18px;">
