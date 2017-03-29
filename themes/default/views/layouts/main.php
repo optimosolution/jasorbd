@@ -7,8 +7,6 @@
         <title><?php echo CHtml::encode($this->pageTitle); ?></title>
         <meta name="keywords" content="" />
         <meta name="description" content="" />
-        <meta name="author" content="S.M. Saidur Rahman">
-        <meta name="generator" content="Optimo Solution" />
         <!-- mobile settings -->
         <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
         <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
@@ -181,7 +179,7 @@
                 </div>
                 <div class="copyright">
                     <div class="container">
-                        Copyright &copy; <?php echo date('Y'); ?> <?php echo Yii::app()->name; ?>. Developed by <?php echo CHtml::link('Optimo Solution', 'http://www.optimosolution.com', array('target' => '_blank')); ?>
+                        Copyright &copy; <?php echo date('Y'); ?> <?php echo Yii::app()->name; ?>.
                     </div>
                 </div>
             </footer>
