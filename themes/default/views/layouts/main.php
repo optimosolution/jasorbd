@@ -5,8 +5,8 @@
     <head>
         <meta charset="utf-8" />
         <title><?php echo CHtml::encode($this->pageTitle); ?></title>
-        <meta name="keywords" content="" />
-        <meta name="description" content="" />
+        <meta name="keywords" content="Jatio Shompod Rokkha" />
+        <meta name="description" content="Jatio Shompod Rokkha" />
         <!-- mobile settings -->
         <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
         <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
@@ -52,7 +52,7 @@
                         </ul>
                     </div>
                 </div>
-            </div>
+            </div> 
             <a class="slidetop-toggle" href="#"><!-- toggle button --></a>
         </div>
         <!-- /SLIDE TOP -->
@@ -74,7 +74,7 @@
                         ?>
                         <div class="navbar-collapse pull-right nav-main-collapse collapse submenu-dark">
                             <nav class="nav-main">
-                                <ul id="topMain" class="nav nav-pills nav-main" style="font-size:18px;">
+                                <ul id="topMain" class="nav nav-pills nav-main" style="font-size:16px;">
                                     <li class="dropdown active"><!-- HOME -->
                                         <a class="dropdown-toggle" href="#">
                                             <?php echo ContentCategory::getCategoryName(13); ?>
@@ -147,27 +147,22 @@
                             <!-- /Newsletter Form -->
                             <!-- Social Icons -->
                             <div class="margin-top-20">
-                                <a href="#" class="social-icon social-icon-border social-facebook pull-left" data-toggle="tooltip" data-placement="top" title="Facebook">
-
+                                <a href="https://www.facebook.com/jasorbd/" class="social-icon social-icon-border social-facebook pull-left" data-toggle="tooltip" data-placement="top" title="Facebook">
                                     <i class="icon-facebook"></i>
                                     <i class="icon-facebook"></i>
                                 </a>
-
                                 <a href="#" class="social-icon social-icon-border social-twitter pull-left" data-toggle="tooltip" data-placement="top" title="Twitter">
                                     <i class="icon-twitter"></i>
                                     <i class="icon-twitter"></i>
                                 </a>
-
                                 <a href="#" class="social-icon social-icon-border social-gplus pull-left" data-toggle="tooltip" data-placement="top" title="Google plus">
                                     <i class="icon-gplus"></i>
                                     <i class="icon-gplus"></i>
                                 </a>
-
                                 <a href="#" class="social-icon social-icon-border social-linkedin pull-left" data-toggle="tooltip" data-placement="top" title="Linkedin">
                                     <i class="icon-linkedin"></i>
                                     <i class="icon-linkedin"></i>
                                 </a>
-
                                 <a href="#" class="social-icon social-icon-border social-rss pull-left" data-toggle="tooltip" data-placement="top" title="Rss">
                                     <i class="icon-rss"></i>
                                     <i class="icon-rss"></i>
