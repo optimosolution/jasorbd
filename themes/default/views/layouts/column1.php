@@ -59,6 +59,7 @@
                     <!-- /side navigation -->
                 </div>  
                 <hr />
+                <?php $this->get_advertisement(1); ?>
                 <!-- SOCIAL ICONS -->
                 <!--<div class="hidden-xs margin-top-30 margin-bottom-60">
                     <a href="#" class="social-icon social-icon-border social-facebook pull-left" data-toggle="tooltip" data-placement="top" title="Facebook">
@@ -109,6 +110,8 @@
                     )
                 ));
                 ?> 
+                <hr />
+                <?php $this->get_advertisement(1); ?>
                 <hr />
             </div>
         </div>
