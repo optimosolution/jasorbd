@@ -119,7 +119,7 @@
                 ));
                 ?> 
                 <hr />
-                <?php $this->get_advertisement(1); ?>
+                <?php $this->get_advertisement(2); ?>
                 <hr />
             </div>
         </div>
