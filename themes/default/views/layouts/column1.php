@@ -24,22 +24,45 @@
   <!-- /SLIDER -->
  */ ?>
 <!-- -->
+<div class="row alert alert-warning">
+    <div class="col-md-2 text-right">
+        <div style="font-size:16px;"><?php echo Title::get_title(2); ?>: </div>
+    </div>
+    <div class="col-md-10">
+        <marquee behavior="scroll" onmouseover="this.stop()" onmouseout="this.start()"><?php $this->get_marquee_news(); ?></marquee>
+    </div>
+</div>
 <section>
     <div class="container">
         <div class="row">
             <!-- LEFT -->
             <div class="col-md-3 col-sm-3">
                 <!-- INLINE SEARCH -->
-                <div class="inline-search clearfix margin-bottom-30">
-                    <form action="#" method="get" class="widget_search">
-                        <input type="search" placeholder="Start Searching..." id="s" name="s" class="serch-input">
-                        <button type="submit">
-                            <i class="fa fa-search"></i>
-                        </button>
-                    </form>
-                </div>
+                <!--                <div class="inline-search clearfix margin-bottom-30">
+                                    <form action="#" method="get" class="widget_search">
+                                        <input type="search" placeholder="Start Searching..." id="s" name="s" class="serch-input">
+                                        <button type="submit">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                    </form>
+                                </div>-->
                 <!-- /INLINE SEARCH -->
-                <hr />
+                <!--<hr />-->
+                <!-- FEATURED VIDEO -->
+                <h3 class="hidden-xs size-16 margin-bottom-10"><?php echo Title::get_title(10); ?></h3>
+                <div class="hidden-xs embed-responsive embed-responsive-16by9 margin-bottom-60">
+                    <iframe class="embed-responsive-item" width="265" height="215" src="//www.youtube.com/embed/<?php echo $this->get_youtube_video(); ?>" frameborder="0" allowfullscreen></iframe>
+                </div>     
+                <hr />                
+                <!-- Recent News -->
+                <div class="side-nav margin-bottom-60 margin-top-30">
+                    <div class="side-nav-head">
+                        <button class="fa fa-bars"></button>
+                        <h4><?php echo Title::get_title(3); ?></h4>
+                    </div>
+                    <?php Content::get_popular_content(); ?>
+                    <!-- /side navigation -->
+                </div> 
                 <!-- side navigation -->
                 <div class="side-nav margin-bottom-60 margin-top-30">
                     <div class="side-nav-head">
@@ -49,15 +72,6 @@
                     <?php ContentCategory::get_category_list(2); ?>
                     <!-- /side navigation -->
                 </div>
-                <!-- Recent News -->
-                <div class="side-nav margin-bottom-60 margin-top-30">
-                    <div class="side-nav-head">
-                        <button class="fa fa-bars"></button>
-                        <h4><?php echo Title::get_title(3); ?></h4>
-                    </div>
-                    <?php Content::get_popular_content(); ?>
-                    <!-- /side navigation -->
-                </div>  
                 <hr />
                 <?php $this->get_advertisement(1); ?>
                 <!-- SOCIAL ICONS -->
@@ -88,13 +102,7 @@
             <div class="col-md-6 col-sm-6">
                 <?php echo $content; ?>
             </div>
-            <div class="col-md-3 col-sm-3">
-                <!-- FEATURED VIDEO -->
-                <h3 class="hidden-xs size-16 margin-bottom-10"><?php echo Title::get_title(10); ?></h3>
-                <div class="hidden-xs embed-responsive embed-responsive-16by9 margin-bottom-60">
-                    <iframe class="embed-responsive-item" width="265" height="215" src="//www.youtube.com/embed/<?php echo $this->get_youtube_video(); ?>" frameborder="0" allowfullscreen></iframe>
-                </div>     
-                <hr />
+            <div class="col-md-3 col-sm-3">                
                 <!-- FACEBOOK -->
                 <?php
                 $this->widget('application.extensions.fbLikeBox.fbLikeBox', array(

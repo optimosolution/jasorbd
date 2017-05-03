@@ -69,7 +69,7 @@
                         <!-- Logo -->
                         <?php //echo CHtml::link('<span style="font-size:24px;">' . CHtml::encode(Yii::app()->name) . '</span>', array('site/index'), array('class' => 'logo pull-left')); ?>
 						<?php
-                        $logo = CHtml::image(Yii::app()->theme->baseUrl . '/assets/images/logo.png', 'Logo', array('alt' => Yii::app()->name, 'class' => '', 'title' => Yii::app()->name, 'style' => 'height:60px;'));
+                        $logo = CHtml::image(Yii::app()->theme->baseUrl . '/assets/images/logo_2.png', 'Logo', array('alt' => Yii::app()->name, 'class' => 'img-responsive', 'title' => Yii::app()->name, 'style' => ''));
                         echo CHtml::link($logo, array('site/index'), array('class' => 'logo'));
                         ?>
                         <div class="navbar-collapse pull-right nav-main-collapse collapse submenu-dark">

@@ -530,3 +530,7 @@ i.ico-hover:hover {
     background-color: #CC181E !important;
     color: #FFF !important;
 }
+.nav > li {
+    background-color: #6B6F94;
+    border-right: 1px solid #fff;
+}

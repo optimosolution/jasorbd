@@ -53,7 +53,7 @@ html, body {
 	height:100%;
 }
 body {
-	color:#666;
+	color:#444;
 	background-color:#fff;
 	font-family:'Open Sans',Arial,Helvetica,sans-serif;
 	-webkit-font-smoothing: antialiased;
@@ -80,7 +80,7 @@ body.bg-grey #wrapper {
 section {
 	display: block;
 	position: relative;
-	padding: 80px 0;
+	padding: 10px 0;
 	border-bottom:rgba(0,0,0,0.1) 1px solid;
 
 	-webkit-transition: all .400s;
@@ -196,7 +196,7 @@ h3 a,
 h4 a,
 h5 a,
 h6 a {
-	color:#121212;
+	color:#32386C;
 }
 h1 a:hover,
 h2 a:hover,
@@ -4316,7 +4316,7 @@ section.featured-grid div.row>div .ribbon h4 {
 	border-bottom: rgba(0,0,0,0.06) 1px solid;
 }
 .tab-post a {
-	color:#666;
+	color:#32386C;
 	text-decoration:none;
 }
 section.dark .tab-post a {
@@ -6059,8 +6059,8 @@ section.dark #portfolio h3 {
  **************************************************************** **/
 .blog-post-item {
 	display:block;
-	margin-bottom:80px;
-	padding-bottom:60px;
+	margin-bottom:30px;
+	padding-bottom:25px;
 	border-bottom:#eee 1px solid;
 	position:relative;
 }

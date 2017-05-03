@@ -159,5 +159,21 @@ class Controller extends CController {
             echo CHtml::link($banner, $values['clickurl'], array('target' => '_blank'));
         }
     }
+    
+     public function get_marquee_news() {
+        $array = Yii::app()->db->createCommand()
+                ->select('id,title')
+                ->from('{{content}}')
+                ->where('state=1 and catid!=1')
+                ->limit('20')
+                ->order('created DESC, id DESC')
+                ->queryAll();
+        foreach ($array as $key => $values) {
+            echo '<span>';
+            echo CHtml::link($values['title'], array('/content/view', 'id' => $values['id']), array('class' => '', 'target' => '_blank', 'style' => 'font-size:16px;'));
+            echo '</span>';
+            echo '<span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>';
+        }
+    }
 
 }
