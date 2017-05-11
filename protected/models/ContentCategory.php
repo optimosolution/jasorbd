@@ -258,7 +258,7 @@ class ContentCategory extends CActiveRecord {
             return null;
         }
     }
-
+            
     public static function get_category_list($category) {
         $array = ContentCategory::model()->findAll(
                 array(
@@ -266,7 +266,7 @@ class ContentCategory extends CActiveRecord {
                     'order' => 'title ASC',
                     'limit' => '10',
         ));
-        echo '<ul class="list-group list-group-bordered list-group-noicon uppercase">';
+        echo '<ul class="list-group list-group-bordered list-group-noicon uppercase" style="display: block;">';
         foreach ($array as $key => $value) {
             echo '<li class="list-group-item">' . CHtml::link('<span class="size-11 text-muted pull-right">(' . ContentCategory::count_category($category) . ')</span> ' . $value['title'], array('content/category', 'id' => $value['id']), array()) . ' <small></small></li>';
         }

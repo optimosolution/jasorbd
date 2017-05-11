@@ -23,8 +23,9 @@
     </ul>
     <p style="font-size:16px;">
         <?php echo $this->text_cut($this->html2txt($data->introtext), 150); ?>
-            <?php //echo Content::getPara($data->introtext, '</p>'); ?>
+        <?php //echo Content::getPara($data->introtext, '</p>'); ?>
+        <?php echo CHtml::link('<i class="fa fa-plus"></i> <span>Read more</span>', array('content/view', 'id' => $data->id), array('class' => '', 'style' => 'font-size:14px;')); ?>
     </p>
-    <?php echo CHtml::link('<i class="fa fa-plus"></i> <span>Read More</span>', array('content/view', 'id' => $data->id), array('class' => 'btn btn-reveal btn-default')); ?>
+    <?php //echo CHtml::link('<i class="fa fa-plus"></i> <span>Read More</span>', array('content/view', 'id' => $data->id), array('class' => 'btn btn-reveal btn-default')); ?>
 </div>
 <!-- /POST ITEM -->

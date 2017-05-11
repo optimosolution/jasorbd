@@ -68,29 +68,31 @@
                         </button>
                         <!-- Logo -->
                         <?php //echo CHtml::link('<span style="font-size:24px;">' . CHtml::encode(Yii::app()->name) . '</span>', array('site/index'), array('class' => 'logo pull-left')); ?>
-						<?php
+                        <?php
                         $logo = CHtml::image(Yii::app()->theme->baseUrl . '/assets/images/logo_2.png', 'Logo', array('alt' => Yii::app()->name, 'class' => 'img-responsive', 'title' => Yii::app()->name, 'style' => ''));
                         echo CHtml::link($logo, array('site/index'), array('class' => 'logo'));
                         ?>
-                        <div class="navbar-collapse pull-right nav-main-collapse collapse submenu-dark">
+                        <div class="navbar-collapse pull-right nav-main-collapse collapse submenu-dark">                        
                             <nav class="nav-main">
-                                <ul id="topMain" class="nav nav-pills nav-main" style="font-size:16px;">
-                                    <li class="dropdown active"><!-- HOME -->
-                                        <a class="dropdown-toggle" href="#">
-                                            <?php echo ContentCategory::getCategoryName(13); ?>
-                                        </a>
-                                        <?php echo ContentCategory::get_category_list_menu(13); ?>    
-                                    </li>
-                                    <li><?php echo CHtml::link(Content::get_title(1), array('content/view', 'id' => 1)); ?></li>
-                                    <li class="dropdown"><!-- PAGES -->
-                                        <a class="dropdown-toggle" href="#">
-                                            <?php echo ContentCategory::getCategoryName(2); ?>
-                                        </a>
-                                        <?php echo ContentCategory::get_category_list_menu(2); ?>
-                                    </li>
-                                    <li><?php echo CHtml::link(Title::get_title(6), array('youtube/index')); ?></li>
-                                    <li><?php echo CHtml::link(Title::get_title(14), array('content/view', 'id' => 26)); ?></li>
-                                </ul>
+                                <nav class="nav-main">
+                                    <ul id="topMain" class="nav nav-pills nav-main" style="font-size:16px;">
+                                        <li class="dropdown active"><!-- HOME -->
+                                            <a class="dropdown-toggle" href="#">
+                                                <?php echo ContentCategory::getCategoryName(13); ?>
+                                            </a>
+                                            <?php echo ContentCategory::get_category_list_menu(13); ?>    
+                                        </li>
+                                        <li><?php echo CHtml::link(Content::get_title(1), array('content/view', 'id' => 1)); ?></li>
+                                        <li class="dropdown"><!-- PAGES -->
+                                            <a class="dropdown-toggle" href="#">
+                                                <?php echo ContentCategory::getCategoryName(2); ?>
+                                            </a>
+                                            <?php echo ContentCategory::get_category_list_menu(2); ?>
+                                        </li>
+                                        <li><?php echo CHtml::link(Title::get_title(6), array('youtube/index')); ?></li>
+                                        <li><?php echo CHtml::link(Title::get_title(14), array('content/view', 'id' => 26)); ?></li>
+                                    </ul>
+                                </nav>
                             </nav>
                         </div>
                     </div>
@@ -190,9 +192,9 @@
             </div>
         </div>--><!-- /PRELOADER -->
         <!-- JAVASCRIPT FILES -->
-        <script type="text/javascript">var plugin_path = '<?php echo Yii::app()->theme->baseUrl; ?>/assets/plugins/index.html';</script>
-        <script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/assets/plugins/jquery/jquery-2.1.4.min.js"></script>
-        <script type="text/javascript" src="<?php //echo Yii::app()->theme->baseUrl;          ?>/assets/js/scripts.js"></script>
+        <script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/assets/plugins/bootstrap/js/bootstrap.min.js">
+        <script type="text/javascript" src="<?php //echo Yii::app()->theme->baseUrl; ?>/assets/plugins/jquery/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="<?php //echo Yii::app()->theme->baseUrl;    ?>/assets/js/scripts.js"></script>
         <!-- SWIPE SLIDER -->
         <script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/assets/plugins/slider.swiper/dist/js/swiper.min.js"></script>
         <script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/assets/js/view/demo.swiper_slider.js"></script>

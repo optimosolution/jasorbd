@@ -275,7 +275,7 @@ class Content extends CActiveRecord {
                     'limit' => '10',
                     'order' => 'hits DESC',
         ));
-        echo '<ul style="padding-left:0px;">';
+        echo '<ul class="list-group list-group-bordered list-group-noicon uppercase" style="display: block; padding-left:0px;">';
         foreach ($array as $key => $value) {
             echo '<div class="row tab-post">';
             echo '<div class="col-md-3 col-sm-3 col-xs-3">';
